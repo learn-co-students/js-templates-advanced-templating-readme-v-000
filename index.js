@@ -1,4 +1,5 @@
-Handlebars.reqisterHelper('comment_body', function () {
+Handlebars.registerHelper('comment_body', function () {
+  // debugger
   if (this.state === 'closed') {
     return new Handlebars.SafeString(this.body);
   } else {
