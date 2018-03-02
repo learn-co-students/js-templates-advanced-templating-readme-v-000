@@ -1,14 +1,13 @@
-Handlebars.registerHelper('comment_body', function () {
-  if (this.state === "closed") {
-    return new Handlebars.SafeString(this.body)
-  } else {
-    return new Handlebars.SafeString("<strong>" + this.body + "<strong>")
-  }
-})
-
-function loadIssues() {
-  // passing the whole issues array to template and rendering it all at onnce
-  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
-  var result = template(issues);
+function loadAuthors() {
+  // passing the whole authors array to the template and rendering it all at once
+  var template = Handlebars.compile(document.getElementById("author-template").innerHTML);
+  var result = template(authors);
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
+
+Handlebars.registerHelper('bold', function (options) {
+  return new Handlebars.SafeString(
+    '<strong>' +
+    options.fn(this) +
+    '</strong>');
+});
