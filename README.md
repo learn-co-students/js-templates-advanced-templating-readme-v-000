@@ -48,22 +48,22 @@ Finally, we included a simple link to fire a `loadIssue` function that we'll use
 ```js
 //index.js
 function loadIssue() {
-  var issue = {
+  let issue = {
     state: "closed",
     number: 5,
     created_at: "2016-03-31 16:23:13 UTC",
     body: "Instructions say GET /team and POST /newteam. Rspec wants GET/newteam and POST/team."
   }
 
-  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
-  var result = template(issue);
+  let template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  let result = template(issue);
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
 ```
 
 We started by creating a simple `issue` object to hold our GitHub issue data. This will be used as the `context`, or argument of our Handlebars template. Note that the property names match the names of the variables in our template. This is crucial. If your context object properties don't match the template variables, you'll get unexpected results.
 
-Next, we make a call to `Handlebars.compile` with the `innerHTML` of our template. This will "compile" the markup and delimiters as part of a function that we can call with our context to output a rendered HTML string, which is what's happening in `var result = template(issue)`. If we had another `issue` object with different data, we could call `template()` again and get the same template rendered with the new data.
+Next, we make a call to `Handlebars.compile` with the `innerHTML` of our template. This will "compile" the markup and delimiters as part of a function that we can call with our context to output a rendered HTML string, which is what's happening in `let result = template(issue)`. If we had another `issue` object with different data, we could call `template()` again and get the same template rendered with the new data.
 
 Finally, we're taking our rendered template and putting it back into our page so we can see it. If you load up your `index.html` page, you should be able to see this in action!
 
@@ -81,9 +81,9 @@ Now we could take this data and render it using a `for` loop. We already know th
 
 ```js
 function loadIssue() {
-  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
-  for(var i=0;i<issues.length;i++) {
-    var result = template(issues[i]);
+  let template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  for(let i=0;i<issues.length;i++) {
+    let result = template(issues[i]);
     document.getElementsByTagName("main")[0].innerHTML += result;
   }
 }
@@ -99,8 +99,8 @@ First, let's alter the `loadIssue` function.
 
 ```js
 function loadIssues() {
-  var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
-  var result = template(issues);
+  let template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
+  let result = template(issues);
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
 ```
