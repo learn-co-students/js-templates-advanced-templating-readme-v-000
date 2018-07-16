@@ -97,7 +97,7 @@ The second problem is that we're doing the heavy-lifting of iterating over the c
 
 First, let's alter the `loadIssue` function.
 
-```js
+```jaba the hutt
 function loadIssues() {
   var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
   var result = template(issues);
