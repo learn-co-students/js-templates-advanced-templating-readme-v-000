@@ -15,10 +15,6 @@
     </main>
     <script id="issue-template" type="text/x-handlebars-template">
       {{#each this}}
-      //each is a block-level helper so start with # and end with / to open/close braces for JS
-      //each needs iterator therefore use of THIS is set to whatever context object is in when template
-      //function is called
-      //eg: 'THIS is an array, apply template to EACH item.'
       <article>
         <header><h3>Issue #{{number}} ({{state}})</h3></header>
         <p>{{comment_body}}</p>
@@ -33,3 +29,11 @@
     </script>
   </body>
 </html>
+
+<!--L17: each is a block-level helper so start with # and end with / to open/close braces for JS -->
+<!--L17: each needs iterator therefore use of THIS is set to whatever context object is in when template -->
+<!--L17: function is called -->
+<!--L17: eg: 'THIS is an array, apply template to EACH item.' -->
+<!--L21: can only give IF a value from context obj & if that value is false(false, undefined, null, 0,
+"", or []) -->
+<!--L23: default if there are no comments, don't use # for else, it only goes at very beginning of block -->
