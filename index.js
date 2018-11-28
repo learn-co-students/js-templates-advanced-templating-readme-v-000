@@ -7,6 +7,7 @@ Handlebars.registerHelper('comment_body', function() {
 })
 
 function loadIssues() {
+  //make a call to 'Handlebars.compile' with the 'innerHTML' of template
   var template = Handlebars.compile(document.getElementById("issue-template").innerHTML);
   var result = template(issues);
   document.getElementsByTagName("main")[0].innerHTML += result;
