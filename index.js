@@ -3,6 +3,8 @@ Handlebars.registerHelper('comment_body', function() {
     return new Handlebars.SafeString(this.body)
   } else {
     return new Handlebars.SafeString("<strong>" + this.body + "</strong>")
+    //user Handlebars.SafeString to return string containing HTML so that HTML won't get escaped
+    //comment_body is then used in replace of body
   }
 })
 
