@@ -13,3 +13,4 @@ function loadIssues() {
   let result = template(issues);
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
+ 
