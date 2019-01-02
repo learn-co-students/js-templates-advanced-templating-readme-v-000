@@ -1,4 +1,4 @@
-var issues = [
+const issues = [
 {
   "body": "Instructions say GET /team and POST /newteam. Rspec wants GET/newteam and POST/team.",
   "created_at": "2016-03-31 16:23:13 UTC",
