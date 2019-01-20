@@ -1,5 +1,5 @@
 # JavaScript Handlebars Templates
-
+learn
 ## Objectives
 
 1. Explain how to use Handlebars templates
