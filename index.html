@@ -4,8 +4,33 @@
     <title>JavaScript Handlebars Templates</title>
   </head>
   <body>
+    <!-- <body>... -->
     <main id="main">
+      <a href="#" onclick="loadIssues();">Load GitHub Issue</a>
     </main>
+    <script id="issue-template" type="text/x-handlebars-template">
+    <!-- # open -->
+      {{#each this}}
+    <!-- 'this' is set to whatever the context object is when we call our template function.  -->
+    <!--  we're saying "this is an array, apply template to each item". -->
+      <article>
+        <header><h3>Issue #{{number}} ({{state}})</h3></header>
+    <!-- recplace 'body' with our 'comments_body' helper, defined in index.js -->
+        <p>{{comment_body}}</p>
+    <!-- 'if' helper that allows a conditional
+          again, begins with # and ends with /.
+          You can only give if a value from the context object -->
+        {{#if comments_count}}
+        <p>{{comments_count}} Comments</p>
+        {{else}}
+        <p>No Comments Yet</p>
+        {{/if}}
+        <footer><a href="{{url}}">created {{created_at}}</a></footer>
+      </article>
+      {{/each}}
+    <!-- / close -->
+    </script>
+
     <script src="handlebars.js"></script>
     <script src="issues.js"></script>
     <script src="index.js"></script>
